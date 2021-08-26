@@ -12,7 +12,10 @@ const checkWeather = ({ latitude = 0, longitude = 0 } , callback) => {
         }else if(!body.current) {
             callback('Something is wrong with query')
         }else{
-            callback(undefined, 'Current Temerature is ' + body.current.temperature)
+            callback(undefined,
+                body.current.weather_descriptions[0] + '. It is currently ' + body.current.temperature +
+                ' degrees out. It feel like ' + body.current.feelslike + ' degrees out. ' +
+                'The humidity is '+ body.current.humidity + '%. ')
         }
 
     })
