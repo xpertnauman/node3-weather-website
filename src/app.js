@@ -23,12 +23,12 @@ hbs.registerPartials(partialsDir)
 
 app.use(express.static(publicDir))
 
-app.get('/', (req, res) => {
+/*app.get('/', (req, res) => {
     res.render('index', {
         title: 'Weather',
         name: 'Nauman'
     })
-})
+})*/
 
 app.get('/about', (req, res) => {
     res.render('about', {
@@ -90,14 +90,22 @@ app.get('/help/*', (req, res) => {
         message: 'Help article not found'})
 })
 
-console.log("LOG PRINTING..")
-/*app.get('/!*', (req, res) => {
-    res.render('404', {
-        title: '404 Page',
-        name: 'Nauman',
-        message: 'Page Not Found'
-    })
-})*/
+app.get('/*', (req, res) => {
+
+    if(req.originalUrl === '/') {
+        res.render('index', {
+            title: 'Weather',
+            name: 'Nauman'
+        })
+    } else {
+        res.render('404', {
+            title: '404 Page',
+            name: 'Nauman',
+            message: 'Page Not Found'
+        })
+    }
+
+})
 
 
 app.listen(port, () => {
