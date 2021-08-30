@@ -90,13 +90,12 @@ app.get('/help/*', (req, res) => {
         message: 'Help article not found'})
 })
 
-/*app.get('/!*', (req, res) => {
-    res.render('404', {
-        title: '404 Page',
-        name: 'Nauman',
-        message: 'Page Not Found'
+app.get('/*', (req, res) => {
+    res.render('index', {
+        title: 'Weather',
+        name: 'Nauman'
     })
-})*/
+})
 
 
 app.listen(port, () => {
