@@ -90,6 +90,7 @@ app.get('/help/*', (req, res) => {
         message: 'Help article not found'})
 })
 
+console.log("LOG PRINTING..")
 /*app.get('/!*', (req, res) => {
     res.render('404', {
         title: '404 Page',
