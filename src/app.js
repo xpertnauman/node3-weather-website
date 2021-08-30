@@ -7,6 +7,7 @@ const weatherforecast = require('./utils/weatherforecast')
 
 const app = express()
 const port = process.env.PORT || 3000
+const hostName = '127.0.0.1'
 
 // setting directories path
 const publicDir = path.join(__dirname, '../public')
@@ -98,7 +99,7 @@ app.get('/*', (req, res) => {
 })
 
 
-app.listen(port, () => {
+app.listen(port, hostName, () => {
     console.log('listening to port ' + port)
 
 })
