@@ -91,9 +91,10 @@ app.get('/help/*', (req, res) => {
 })
 
 app.get('/*', (req, res) => {
-    res.render('index', {
-        title: 'Weather',
-        name: 'Nauman'
+    res.render('404', {
+        title: '404 Page',
+        name: 'Nauman',
+        message: 'Page Not Found'
     })
 })
 
