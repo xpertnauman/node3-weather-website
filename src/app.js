@@ -23,7 +23,7 @@ hbs.registerPartials(partialsDir)
 
 app.use(express.static(publicDir))
 
-/*app.get('/', (req, res) => {
+/*app.get('/index.php', (req, res) => {
     res.render('index', {
         title: 'Weather',
         name: 'Nauman'
@@ -93,7 +93,7 @@ app.get('/help/*', (req, res) => {
 app.get('/*', (req, res) => {
 
     console.log(req.originalUrl)
-    if(req.originalUrl === '/') {
+    if(req.originalUrl === '/' || req.originalUrl === '/index.php') {
         res.render('index', {
             title: 'Weather',
             name: 'Nauman'
