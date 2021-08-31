@@ -92,6 +92,7 @@ app.get('/help/*', (req, res) => {
 
 app.get('/*', (req, res) => {
 
+    console.log(req.originalUrl)
     if(req.originalUrl === '/') {
         res.render('index', {
             title: 'Weather',
